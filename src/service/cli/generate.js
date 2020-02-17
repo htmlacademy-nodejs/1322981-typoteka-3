@@ -1,6 +1,7 @@
 'use strict';
 
-const fs = require(`fs`);
+const chalk = require(`chalk`);
+const fs = require(`fs`).promises;
 const {
   getRandomInt,
   shuffle,
@@ -19,7 +20,7 @@ const {
 
 module.exports = {
   name: `--generate`,
-  run(args, process) {
+  async run(args, process) {
     const currentDate = new Date();
     const pastDate = new Date(currentDate - THREE_MONTH);
     const generateOffers = (count) => (
@@ -38,13 +39,12 @@ module.exports = {
       return process.exit(ExitCode.success);
     }
     const content = JSON.stringify(generateOffers(countOffer));
-    return fs.writeFile(FILE_NAME, content, (err) => {
-      if (err) {
-        console.error(`Не смог записать данные в файл.`);
-        return process.exit(ExitCode.failure);
-      }
-
-      return console.info(`Файл создан.`);
-    });
+    try {
+      await fs.writeFile(FILE_NAME, content);
+      return console.info(chalk.green(`Файл создан.`));
+    } catch (err) {
+      console.error(chalk.red(`Не смог записать данные в файл.`));
+      return process.exit(ExitCode.failure);
+    }
   }
 };
