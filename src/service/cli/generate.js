@@ -10,9 +10,6 @@ const {
 const {
   FILE_NAME,
   DEFAULT_COUNT,
-  CATEGORIES,
-  SENTENCES,
-  TITLES,
   MAX_COUNT,
   ExitCode,
   THREE_MONTH,
