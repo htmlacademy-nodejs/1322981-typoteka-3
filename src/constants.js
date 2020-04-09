@@ -21,6 +21,40 @@ const THREE_MONTH = 1000 * 60 * 60 * 24 * 90;
 const DEFAULT_PORT = 3000;
 const DEFAULT_EXPRESS_PORT = 8080;
 
+const CATEGORY = [{
+  name: `Автомобили`,
+  count: `88`
+}, {
+  name: `Удаленная работа`,
+  count: `13`
+}, {
+  name: `Бизнес`,
+  count: `13`
+}, {
+  name: `Путешествия`,
+  count: `13`
+}, {
+  name: `Дизайн и обустройство`,
+  count: `13`
+}, {
+  name: `Производство игрушек`,
+  count: `23`
+}, {
+  name: `UX & UI`,
+  count: `21`
+}];
+
+const MOST_DISCUSS = [{
+  text: `Билл Гейтс впервые за два года возглавил рейтинг самых богатых людей мира по версии Bloomberg`,
+  links: `12`
+}];
+
+const COMMENTS = [{
+  text: `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты с матом`,
+  avatar: `/img/avatar-small-1.png`,
+  name: `Анна Артамонова`
+}];
+
 module.exports = {
   DEFAULT_COUNT,
   FILE_NAME,
@@ -33,7 +67,10 @@ module.exports = {
   FILE_TITLES_PATH,
   FILE_CATEGORIES_PATH,
   DEFAULT_PORT,
-  DEFAULT_EXPRESS_PORT
+  DEFAULT_EXPRESS_PORT,
+  CATEGORY,
+  MOST_DISCUSS,
+  COMMENTS
 };
 
 module.exports.HttpCode = {
