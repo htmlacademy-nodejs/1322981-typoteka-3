@@ -5,7 +5,7 @@ const {DEFAULT_EXPRESS_PORT} = require(`../constants`);
 const authorization = require(`./routes/authorization`);
 const advert = require(`./routes/advert`);
 const articles = require(`./routes/articles`);
-const categories = require(`./routes/search`);
+const categories = require(`./routes/categories`);
 const search = require(`./routes/search`);
 const path = require(`path`);
 

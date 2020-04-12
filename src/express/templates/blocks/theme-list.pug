@@ -1,5 +1,5 @@
-mixin theme-list(list)
-  section.main-page__theme-list
+mixin theme-list(list, modifyClass)
+  section.main-page__theme-list(class=modifyClass)
     h2.visually-hidden Список тем
     ul.themes
       each theme in list

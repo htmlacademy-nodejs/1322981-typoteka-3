@@ -1,0 +1,16 @@
+extend ../blocks/layout-admin.pug
+block main
+  main
+    section.main-page__publication.publication
+      h1.publication__title Комментарии
+      ul.publication__list
+        each comment in comments
+          li.publication__list-item
+            .publication__header
+              img(src=comment.avatar width="20" height="20" alt="Аватар пользователя").publication__list-image
+              b(publication__list-name) #{comment.name}
+              time.publication__item-time(datetime=comment.time) #{comment.time}
+            a.publication__item-text(href="#") #{comment.text}
+            p.publication__text-strong #{comment.text}
+            button.publication__button.button.button--close-item(type="button")
+              span.visually-hidden Закрыть строку списка

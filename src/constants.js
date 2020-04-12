@@ -52,7 +52,9 @@ const MOST_DISCUSS = [{
 const COMMENTS = [{
   text: `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты с матом`,
   avatar: `/img/avatar-small-1.png`,
-  name: `Анна Артамонова`
+  avatarBig: `/img/avatar-1.png`,
+  name: `Анна Артамонова`,
+  time: `21.03.2019, 20:33`
 }];
 
 module.exports = {
