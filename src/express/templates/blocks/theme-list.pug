@@ -1,0 +1,8 @@
+mixin theme-list(list, modifyClass)
+  section.main-page__theme-list(class=modifyClass)
+    h2.visually-hidden Список тем
+    ul.themes
+      each theme in list
+        li.themes__item
+          a(href="#").themes__item-link #{theme.name}
+            sup #{theme.count}

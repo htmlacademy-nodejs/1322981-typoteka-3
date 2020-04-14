@@ -1,0 +1,48 @@
+extend ../blocks/layout.pug
+block main
+  main.articles-category
+    h1 Бизнес
+    include ../blocks/theme-list.pug
+    +theme-list(category, 'articles-category__theme-list')
+    section.main-page__list.preview
+      h2.visually-hidden Список превью статей
+      ul.preview__list
+        li.preview__item
+          ul.preview__breadcrumbs
+            li.preview__breadcrumbs-item
+              a(href="#").preview__breadcrumbs-link Дизайн
+            li.preview__breadcrumbs-item
+              a(href="#").preview__breadcrumbs-link Удаленная работа
+          div.preview__background
+            img(src="/img/skyscraper@1x.jpg" width="460" height="240" srcset="/img/skyscraper@1x.jpg 1x, /img/skyscraper@2x.jpg 2x" alt="Фотография небоскреба").preview__background-image
+          time(datetime="2019-03-21T20:33").preview__time 21.03.2019, 20:33
+          h3.preview__name
+            a(href="#").preview__name-link Я ничего не понял
+          p.preview__text Если вы сами пишете такие письма — почитайте Ильяхова. А в этой заметке я расскажу про заклинание, которое от таких писем помогает.
+          a(href="#").preview__comment Комментарии
+            span.preview__cloud
+              b.preview__comment-count 12
+        li.preview__item
+          ul.preview__breadcrumbs
+            li.preview__breadcrumbs-item
+              a(href="#").preview__breadcrumbs-link Фриланс
+          div.preview__background
+            img(src="/img/sea@1x.jpg" width="460" height="240" srcset="/img/sea@1x.jpg 1x, /img/sea@2x.jpg 2x" alt="Фотография моря").preview__background-image
+          time(datetime="2019-03-21T20:33").preview__time 21.03.2019, 20:33
+          h3.preview__name
+            a(href="#").preview__name-link Путешествие в Голландию
+          p.preview__text Если вы сами пишете такие письма — почитайте Ильяхова. А в этой заметке я расскажу про заклинание, которое от таких писем помогает.</p>
+          a(href="#").preview__comment Комментарии
+            span.preview__cloud
+              b.preview__comment-count 12
+        li.preview__item.preview__item--noimage
+          ul.preview__breadcrumbs
+            li.preview__breadcrumbs-item
+              a(href="#").preview__breadcrumbs-link Фриланс
+          time(datetime="2019-03-21T20:33").preview__time 21.03.2019, 20:33
+          h3.preview__name
+            a(href="#").preview__name-link Путин подписал закон о предустановке российских приложений на смартфоны и другую электронику
+          p.preview__text Президент России Владимир Путин подписал закон об обязательной предустановке российского программного обеспечения на электронную технику, продаваемую в России. Документ опубликован на официальном сайте правовой информации.
+          a(href="#").preview__comment Комментарии
+            span.preview__cloud
+              b.preview__comment-count 12

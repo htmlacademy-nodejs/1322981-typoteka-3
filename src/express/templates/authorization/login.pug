@@ -1,0 +1,46 @@
+extend ../blocks/layout.pug
+block main
+  main
+    h1.visually-hidden Регистрация пользователя
+    section.modal
+      .popup.popup--registration
+        button(type="button" aria-label="Закрыть окно").popup__button.button.button--popup-close Закрыть окно
+        h2.visually-hidden Форма регистрации
+        ul.popup__tabs
+          li.popup__tab.popup__tab--active.popup__tab--register
+            button(type="button").popup__tab-switcher.button Регистрация
+          li.popup__tab.popup__tab--log-in
+            button(type="button").popup__tab-switcher.button Войти
+        .popup__form.popup__form--active.form.form--register
+          form(action="#" method="get")
+            div.form__field
+              label
+                input(type="email" placeholder="Электронная почта" required="")
+            div.form__field
+              label
+                input(type="text" placeholder="Имя" required="")
+            div.form__field
+              label
+                input(type="text" placeholder="Фамилия")
+            div.form__field
+              label
+                input(type="password" placeholder="Пароль" required="")
+            div.form__field
+              label
+                input(type="password" placeholder="Повтор пароля" required="")
+            div.form__image-loader
+              a.form__avatar.avatar
+                img(src="img/icons/smile.svg" alt="аватар пользователя")
+              label Загрузить фото профиля
+                input.visually-hidden(type="file")
+            button(type="submit").form__submit-btn.form__submit-btn--register.button.button--colored Зарегистрироваться
+        .popup__form.popup__form--hidden.form.form--log-in
+          form(action="#" method="get")
+            .form__field
+              label
+                input(type="email" placeholder="Электронная почта" required="")
+            .form__field
+              label
+                input(type="password" placeholder="Пароль" required="")
+            button(type="submit").form__submit-btn.form__submit-btn--log-in.button.button--colored Войти
+      .modal__overlay
