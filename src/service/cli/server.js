@@ -1,9 +1,9 @@
 'use strict';
 
-const chalk = require(`chalk`);
-const http = require(`http`);
 const fs = require(`fs`).promises;
-const {DEFAULT_PORT, HttpCode, FILE_NAME} = require(`../../constants`);
+const express = require(`express`);
+const {DEFAULT_PORT, HttpCode, FILE_NAME, API_PREFIX} = require(`../../constants`);
+const routes = require(`../api`);
 
 module.exports = {
   name: `--server`,
@@ -27,12 +27,13 @@ module.exports = {
       }
     });
 
+    app.use(API_PREFIX, routes);
+
     app.use((req, res) => res
       .status(HttpCode.NOT_FOUND)
       .send(`Not found`));
 
-    app.listen(port,
-      () => console.log(`Сервер запущен на порту: ${port}`));
+    app.listen(port, () => console.log(`Сервер запущен на порту: ${port}`));
 
   }
 };
