@@ -2,9 +2,16 @@
 
 const {Router} = require(`express`);
 const advert = new Router();
-const {COMMENTS} = require(`../../constants`);
+const api = require(`../api`).getAPI();
 
-advert.get(`/`, (req, res) => res.render(`advert/my`, {comments: COMMENTS}));
-advert.get(`/comments`, (req, res) => res.render(`advert/comments`, {comments: COMMENTS}));
+advert.get(`/`, async (req, res) => {
+  const articles = await api.getArticles();
+  res.render(`advert/my`, {articles});
+});
+
+advert.get(`/comments`, async (req, res) => {
+  const articles = await api.getArticles();
+  res.render(`advert/comments`, {comments: articles});
+});
 
 module.exports = advert;
