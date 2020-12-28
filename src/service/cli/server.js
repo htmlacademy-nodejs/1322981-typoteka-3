@@ -19,7 +19,7 @@ module.exports = {
     app.use(express.json());
 
     app.use((req, res, next) => {
-      logger.debug(`Request on route ${req.url}`);
+      logger.info(`Request on route ${req.url}`);
       res.on(`finish`, () => {
         logger.info(`Response status code ${res.statusCode}`);
       });
