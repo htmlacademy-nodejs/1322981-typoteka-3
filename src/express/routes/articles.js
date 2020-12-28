@@ -10,11 +10,11 @@ articles.get(`/add`, (req, res) => res.render(`articles/new-post`));
 
 articles.get(`/edit/:id`, async (req, res) => {
   const {id} = req.params;
-  const [articlesPosts, categories] = await Promise.all([
-    api.getArticles(id),
+  const [articlesPost, categories] = await Promise.all([
+    api.getArticle(id),
     api.getCategories()
   ]);
-  res.send(`/articles/edit/:id`, {articlesPosts, categories});
+  res.render(`articles/post`, {articlesPost, categories});
 });
 
 articles.get(`/:id`, (req, res) => res.render(`articles/post`, {category: CATEGORY, comments: COMMENTS}));

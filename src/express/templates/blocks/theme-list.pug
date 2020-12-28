@@ -4,5 +4,5 @@ mixin theme-list(list, modifyClass)
     ul.themes
       each theme in list
         li.themes__item
-          a(href="#").themes__item-link #{theme.name}
+          a(href="#").themes__item-link #{theme}
             sup #{theme.count}
