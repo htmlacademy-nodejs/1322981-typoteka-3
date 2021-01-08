@@ -19,5 +19,12 @@ app.use(`/my`, advert);
 app.use(`/articles`, articles);
 app.use(`/categories`, categories);
 app.use(`/search`, search);
+
+const PUBLIC_DIR = `public`;
+const UPLOAD_DIR = `upload`;
+
+app.use(express.static(path.resolve(__dirname, PUBLIC_DIR)));
+app.use(express.static(path.resolve(__dirname, UPLOAD_DIR)));
+
 app.listen(DEFAULT_EXPRESS_PORT,
     () => console.log(`Сервер запущен на порту: ${DEFAULT_EXPRESS_PORT}`));
