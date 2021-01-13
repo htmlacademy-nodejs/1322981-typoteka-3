@@ -3,9 +3,9 @@ block main
   section.main-page__notes.notes
     h1.publication__title Мои записи
     ul.notes__list
-       each comment in comments
+       each article in articles
           li.notes__list-item
-            time.notes__item-time(datetime=comment.time) #{comment.time}
-            a(href="#").notes__item-text #{comment.text}
+            time.notes__item-time(datetime=article.createDate) #{article.createDate}
+            a(href="#").notes__item-text #{article.announce}
             button.notes__button.button.button--close-item(type="button")
               span.visually-hidden Закрыть строку списка

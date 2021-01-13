@@ -5,7 +5,12 @@ block main
       .search-page__wrapper
         h1 Поиск
         .search.search-page__form
-          form(action="#" method="get")
+          form(action="/search" method="get" autocomplete="off")
             label
-              input(type="text" placeholder="Что ищем?")
+              input(type="text" placeholder="Что ищем?" name="search")
             button(type="submit").search__button.button.button--transparent Найти
+          .search__result
+            if results.length
+              each result in results
+                time.search__date(datetime=result.createDate) #{result.createDate}
+                a(href='#').search__link #{result.announce}

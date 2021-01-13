@@ -8,21 +8,20 @@ block main
         .post__wrapper
           .post__head
             a(href="#").post__backwards.button.button--backwards Назад
-            time(datetime="2019-03-21T20:33").post__date 21.03.2019, 20:33
-            h2.post__title.title.title--main AirPods в один клик
+            time(datetime=articlesPost.createDate).post__date #{articlesPost.createDate}
+            h2.post__title.title.title--main #{articlesPost.title}
             include ../blocks/theme-list.pug
-            +theme-list(category, 'post__themes')
+            +theme-list(categories, 'post__themes')
           .post__picture
             img(src="/img/sea-fullsize@1x.jpg" alt="пейзаж море, скалы, пляж")
           .post__text
-            h3 Бирюзовое доверие
-            p У Apple иногда попадаются интерфейсы, за которые создателей хочется сильно поругать — к примеру интерфейс публикации приложения в AppStore, для которого я уже неделю восстановливаю свой аккаунт разработчика.
-            p Или интерфейс подключения AirPods на макбуке. Чтобы переключить наушники между телефоном и компьютером, нужно сначала нажать на значок звука, затем дождаться, когда в списке устройств появятся наушники, потом нажать на них и дождаться, пока случится вся магия подключения. Иногда по загадочным причинам магия не случается, и операцию нужно повторить, выполняя все те же клики-ожидания-клики — бесит.
+            h3 Бирюзовое доверие #{articlesPost.announce}
+            p #{articlesPost.fullText}
       .post__wrapper.post__wrapper--comments
         section.post__comments.comments
           h2.comments__title.title.title--middle Комментарии
           ul.comments__list
-            each comment in comments
+            each comment in articlesPost.comments
               li.comments__comment
                 .comments__avatar.avatar
                   img(src=comment.avatarBig alt="Аватар пользователя")
