@@ -17,7 +17,6 @@ CREATE TABLE articles(
   title varchar(124) NOT NULL,
   announce varchar(255) NOT NULL,
   fullText text NOT NULL,
-  created_at timestamp DEFAULT current_timestamp,
   picture varchar(50) NOT NULL,
   user_id integer NOT NULL,
   created_at timestamp DEFAULT current_timestamp,
@@ -38,7 +37,7 @@ CREATE TABLE article_categories(
   article_id integer NOT NULL,
   category_id integer NOT NULL,
   PRIMARY KEY (article_id, category_id),
-  FOREIGN KEY (article_id) REFERENCES artcles(id),
+  FOREIGN KEY (article_id) REFERENCES articles(id),
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
